@@ -24,11 +24,13 @@
     "copy:workers": "cp -r node_modules/monaco-editor-es/workers/* monaco/workers/",
     "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
     "preversion": "npm run lint",
-    "postversion": "git push --follow-tags"
+    "postversion": "git push --follow-tags",
+    "test": "npm run build && start npm run start && npx testcafe chrome ./test/e2e.js"
   },
   "devDependencies": {
     "esmtk": "^0.5.6",
-    "monaco-editor-es": "^0.30.1"
+    "monaco-editor-es": "^0.30.1",
+    "testcafe": "^2.0.1"
   },
   "standard": {
     "ignore": [
